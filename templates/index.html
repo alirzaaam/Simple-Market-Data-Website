@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/style.css">
+    <title>Check the Stock Market</title>
+</head>
+<body>
+    <h1>Choose your Stock</h1>
+    <div class="container">
+        <div>
+            <form action="/" method="POST">
+            <select name="stocks" id="">
+                <option value="AAPL">AAPL</option>
+                <option value="BOED">BOED</option>
+                <option value="BOEU">BOEU</option>
+                <option value="XOMX">XOMX</option>
+                <option value="XOMZ">XOMZ</option>
+                <option value="IPCXU">IPCXU</option>
+                <option value="CHACU">CHACU</option>
+                <option value="BCTXZ">BCTXZ</option>
+                <option value="IPCXU">IPCXU</option>
+                
+            </select>
+            <input type="submit" value="Enter">
+            </form>
+        </div>
+        <div class="show">
+            <table>
+                <tr>
+                <th>Open</th>
+                <th>High</th>
+                <th>Low</th>
+                <th>Close</th>
+                <th>Volume</th>
+                <th>Adj_High</th>
+                <th>Adj_Low</th>
+                <th>Adj_Close</th>
+                <th>Adj_Open</th>
+                <th>Adj_Volume</th>
+                <th>Split_Factor</th>
+                <th>Dividend</th>
+                <th>Name</th>
+                <th>Exchange_Code</th>
+                <th>Asset_Type</th>
+                <th>Price_Currency</th>
+                <th>Symbol</th>
+                <th>Exchange</th>
+                <th>Date</th>
+                </tr>
+                {% for item in data %}
+                <tr>
+                <td>{{item['open']}}</td>
+                
+                <td>{{item['high']}}</td>
+                
+                <td>{{item['low']}}</td>
+                
+                <td>{{item['close']}}</td>
+                
+                <td>{{item['volume']}}</td>
+                
+                <td>{{item['adj_high']}}</td>
+                
+                <td>{{item['adj_low']}}</td>
+                
+                <td>{{item['adj_close']}}</td>
+                
+                <td>{{item['adj_open']}}</td>
+                
+                <td>{{item['adj_volume']}}</td>
+                
+                <td>{{item['split_factor']}}</td>
+                
+                <td>{{item['dividend']}}</td>
+                
+                <td>{{item['name']}}</td>
+                
+                <td>{{item['exchange_code']}}</td>
+                
+                <td>{{item['asset_type']}}</td>
+                
+                <td>{{item['price_currency']}}</td>
+                
+                <td>{{item['symbol']}}</td>
+                
+                <td>{{item['exchange']}}</td>
+                
+                <td>{{item['date']}}</td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+</body>
+</html>
